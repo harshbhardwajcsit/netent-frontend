@@ -49,8 +49,13 @@
   "license": "MIT",
   "name": "html5-boilerplate",
   "scripts": {
-    "build": "gulp build",
-    "test": "gulp archive && mocha --require babel-core/register --reporter spec --timeout 5000"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --aot --prod --outputPath=dist",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "postinstall": "npm run build"
   },
   "version": "6.1.0",
   "description": "A professional front-end template for building fast, robust, and adaptable web apps or sites.",

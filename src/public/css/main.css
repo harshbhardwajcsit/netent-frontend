@@ -1,0 +1,50 @@
+.main {
+  background-image: url("../img/backimg.png");
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.treasure-pot {
+  position: absolute;
+  left: 90px;
+  bottom: 59px;
+}
+
+.playerAction {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  min-width: 260px;
+
+}
+
+button {
+  font-size: 24px;
+  font-family: monospace;
+  background-color: white;
+  min-width: 260px;
+  height: 65px;
+  padding: 14px 50px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+}
+
+.gameResult {
+  min-width: 260px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.gameSpinner {
+  position: absolute;
+  top: 17%;
+  left: 42%;
+}
+
+h1.treasure-pot {
+  padding-left: 10px;
+}
+
+
