@@ -29,13 +29,14 @@ function playGame() {
 
 function evaluateGameResult(result) {
   document.getElementsByClassName('spinner')[0].style.visibility = 'hidden';
-  saveRecordByPlayer(result);
+  // saveRecordByPlayer(result);
   switch (result.data.gameStatus) {
     case "LOST":
       document.getElementById("result").innerHTML = "Sorry! you loose your coins";
       break;
     case "WIN":
       coins = coins + 20;
+      console.log("now coins is", coins);
       document.getElementById("coins").innerHTML = coins;
       document.getElementById("result").innerHTML = "Congrats! you get 20 more coins";
       gain = gain + 20;
@@ -54,9 +55,13 @@ function gameRules() {
 function fetchRandomResult() {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
-    var result = JSON.parse(this.responseText);
-    if (result) {
-      evaluateGameResult(result, coins);
+    if (this.readyState === 4 && this.status === 200) {
+      var result = JSON.parse(this.responseText);
+      if (result) {
+        evaluateGameResult(result);
+        xhr.onreadystatechange = null;
+        console.log(result);
+      }
     }
   };
   xhr.open("GET", "https://dry-dawn-73485.herokuapp.com/api/coin/result", true);
@@ -74,9 +79,12 @@ function gameRTP() {
 function saveRecordByPlayer(result) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
-    var result = JSON.parse(this.responseText);
-    if (result) {
-      console.log(result);
+    if (this.readyState === 4 && this.status === 200) {
+      xhr.onreadystatechange = null;
+      var result = JSON.parse(this.responseText);
+      if (result) {
+        console.log(result);
+      }
     }
   };
   xhr.open("POST", "http://localhost:8080/api/coin/save/player", true);
