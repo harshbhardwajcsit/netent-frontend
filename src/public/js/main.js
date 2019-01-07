@@ -32,8 +32,9 @@ function evaluateGameResult(result) {
   // saveRecordByPlayer(result);
   switch (result.data.gameStatus) {
     case "LOST":
-      document.getElementById("result").innerHTML = "Sorry! you loose your coins";
+      document.getElementById("result").innerHTML = "Sorry! you lost";
       break;
+
     case "WIN":
       coins = coins + 20;
       console.log("now coins is", coins);
@@ -42,7 +43,11 @@ function evaluateGameResult(result) {
       gain = gain + 20;
       break;
     case "FREE ROUND":
-      document.getElementById("result").innerHTML = "Hurry! you get extra free round to play";
+      coins = coins + 20;
+      console.log("now coins is", coins);
+      document.getElementById("coins").innerHTML = coins;
+      document.getElementById("result").innerHTML = "Congrats! you get 20 more coins and One Free round";
+      gain = gain + 20;
       pre_round_result = 'FREE_ROUND';
       break;
   }
