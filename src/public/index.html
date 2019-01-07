@@ -13,28 +13,26 @@
         id="bootstrap-css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
-<div>
-  <button style="cursor: pointer ; color: red;" onclick="gameRules()">Rules</button>
-  <button style="cursor: pointer ; color: red;" onclick="gameRTP()">RTP</button>
-</div>
-<body class="main" onload="loadGame()" >
-<div class="container">
+
+<body class="main" onload="loadGame()">
+<header>
+  King of coins
+</header>
 <div class="gameResult">
   <p id="result"></p>
 </div>
 <div class="spinner">
-  <img height="400px" width="400px" class="gameSpinner" src="img/wheel.gif">
+  <img height="400px" width="400px" class="gameSpinner" src="img/wh1.gif">
 </div>
-<div class="playerAction">
-  <button onclick="playGame(document.getElementById('coins').valueOf())">
-    Play
-  </button>
-</div>
-</div>
+  <img class="playerAction" src="img/Play.png" width="300px" height= "100px" onclick="playGame()">
 <div class="treasure-pot">
   <img src="img/coins.gif">
-  <h1 style="padding-left: 20px" id="coins"></h1>
-  <span style="padding-left: 20px" id="name"></span>
+  <h1 style="color: white" id="coins"></h1>
+  <span style="color: white" id="name"></span>
+</div>
+<div class="col-2 mt-3">
+  <button class="buttonClass" onclick="gameRules()">Rules</button>
+  <button class="buttonClass" onclick="gameRTP()">RTP</button>
 </div>
 </body>
 </html>

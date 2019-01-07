@@ -1,40 +1,38 @@
 .main {
-  background-image: url("../img/backimg.png");
-  background-repeat: no-repeat;
-  width: 100%;
-}
+background-color: #13244b}
 
 .treasure-pot {
   position: absolute;
   left: 90px;
   bottom: 59px;
+  padding-left: 20px;
 }
 
 .playerAction {
   position: absolute;
   top: 70%;
   left: 45%;
-  min-width: 260px;
+  max-width: 300px;
 
 }
 
-button {
+.buttonClass {
   font-size: 24px;
   font-family: monospace;
-  background-color: white;
   min-width: 260px;
   height: 65px;
   padding: 14px 50px;
   -moz-border-radius: 25px;
   -webkit-border-radius: 25px;
   border-radius: 25px;
+
 }
 
 .gameResult {
   min-width: 260px;
   position: absolute; /* or absolute */
-  top: 50%;
-  left: 32%;
+  top: 33%;
+  left: 23%;
 }
 
 .gameSpinner {
@@ -45,15 +43,22 @@ button {
 
 p {
   font-family: Monospaced;
-  font-size: 50px;
-  color: white;
+  font-size: 100px;
+  color: #67ff81;
 }
 
 h1.treasure-pot {
   padding-left: 10px;
 }
+h1{
+  color: white;
+}
 
-@media only screen and (max-width: 600px){
+.boxClass {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media only screen and (max-width: 600px) {
   .treasure-pot {
     position: absolute;
     left: 36%;
@@ -74,8 +79,8 @@ h1.treasure-pot {
   }
 
   .playerAction {
-    top: 94%;
-    left: 19%;
+    top: 95%;
+    left: 12%;
   }
 
   p {
@@ -89,7 +94,8 @@ h1.treasure-pot {
     font-family: Monospaced;
     color: white;
   }
-  button {
+
+  .buttonClass {
     font-size: 24px;
     font-family: monospace;
     background-color: white;
@@ -99,5 +105,6 @@ h1.treasure-pot {
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     border-radius: 40px;
+    background-image: url("/src/public/img/Cap'n Robbys.png");
   }
 }
