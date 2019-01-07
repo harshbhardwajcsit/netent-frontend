@@ -15,7 +15,6 @@ function playGame() {
 
   if (pre_round_result !== 'FREE_ROUND') {
     coins = coins - 10;
-    console.log("coins before play game", coins);
     document.getElementById("coins").innerHTML = coins
     bet = bet + 10;
   }
@@ -61,11 +60,10 @@ function fetchRandomResult() {
       if (result) {
         evaluateGameResult(result);
         xhr.onreadystatechange = null;
-        console.log(result);
       }
     }
   };
-  xhr.open("GET", "https://dry-dawn-73485.herokuapp.com/api/coin/result", true);
+  xhr.open("GET", " https://dry-dawn-73485.herokuapp.com/api/coin/result", true);
   xhr.send();
 }
 
