@@ -30,26 +30,23 @@ function playGame() {
 function evaluateGameResult(result) {
   document.getElementsByClassName('spinner')[0].style.visibility = 'hidden';
   // saveRecordByPlayer(result);
-  switch (result.data.gameStatus) {
-    case "LOST":
-      document.getElementById("result").innerHTML = "Sorry! you lost";
-      break;
-
-    case "WIN":
-      coins = coins + 20;
-      console.log("now coins is", coins);
-      document.getElementById("coins").innerHTML = coins;
-      document.getElementById("result").innerHTML = "Congrats! you get 20 more coins";
-      gain = gain + 20;
-      break;
-    case "FREE ROUND":
-      coins = coins + 20;
-      console.log("now coins is", coins);
-      document.getElementById("coins").innerHTML = coins;
-      document.getElementById("result").innerHTML = "Congrats! you get 20 more coins and One Free round";
-      gain = gain + 20;
+  if (result.data.gameStatus === "LOST") {
+    if (result.data.isFreeRound) {
       pre_round_result = 'FREE_ROUND';
-      break;
+      document.getElementById("result").innerHTML = "LOST but get 1 round free";
+    } else {
+      document.getElementById("result").innerHTML = "LOST! better luck next time";
+    }
+  } else {
+    coins = coins + 20;
+    gain = gain + 20;
+    document.getElementById("coins").innerHTML = coins;
+    if (result.data.isFreeRound) {
+      pre_round_result = 'FREE_ROUND';
+      document.getElementById("result").innerHTML = "BINGO! you won 20 coins and 1 free round";
+    } else {
+      document.getElementById("result").innerHTML = "HURRY! you won 20 coins";
+    }
   }
 }
 

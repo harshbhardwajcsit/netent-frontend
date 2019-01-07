@@ -63,6 +63,8 @@ h1.treasure-pot {
 
   h1.treasure-pot {
     padding-left: 10px;
+    font-family: Monospaced;
+    color: white;
   }
 
   .gameSpinner {
@@ -84,6 +86,8 @@ h1.treasure-pot {
 
   h1 {
     font-size: 32px;
+    font-family: Monospaced;
+    color: white;
   }
   button {
     font-size: 24px;

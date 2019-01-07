@@ -13,22 +13,23 @@
         id="bootstrap-css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 </head>
-
+<div>
+  <button style="cursor: pointer ; color: red;" onclick="gameRules()">Rules</button>
+  <button style="cursor: pointer ; color: red;" onclick="gameRTP()">RTP</button>
+</div>
 <body class="main" onload="loadGame()" >
+<div class="container">
 <div class="gameResult">
   <p id="result"></p>
 </div>
 <div class="spinner">
   <img height="400px" width="400px" class="gameSpinner" src="img/wheel.gif">
 </div>
-<div>
-  <button style="cursor: pointer ; color: red;" onclick="gameRules()">Rules</button>
-  <button style="cursor: pointer ; color: red;" onclick="gameRTP()">RTP</button>
-</div>
 <div class="playerAction">
   <button onclick="playGame(document.getElementById('coins').valueOf())">
     Play
   </button>
+</div>
 </div>
 <div class="treasure-pot">
   <img src="img/coins.gif">
