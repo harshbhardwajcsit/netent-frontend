@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Coin King</title>
+  <title>King of coins</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" type="text/css" href="../css/main.css">
@@ -12,25 +12,26 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
         id="bootstrap-css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <audio id="audio1" src="http://www.soundjay.com/button/button-16.wav" autoplay="false"></audio>
+  <audio id="audio2" src="img/Ta%20Da-SoundBible.com-1884170640.wav" autoplay="false"></audio>
+  <audio id="audio3" src="img/fail-trombone-03.wav" autoplay="false"></audio>
 </head>
 
 <body class="main" onload="loadGame()">
-<header>
-  King of coins
-</header>
 <div class="gameResult">
   <p id="result"></p>
 </div>
 <div class="spinner">
   <img height="400px" width="400px" class="gameSpinner" src="img/wh1.gif">
 </div>
-  <img class="playerAction" src="img/Play.png" width="300px" height= "100px" onclick="playGame()">
+<img class="playerAction" src="img/Play.png" width="300px" height="100px" onclick="playGame()">
 <div class="treasure-pot">
-  <img src="img/coins.gif">
+  <img width="100px" height="100px" src="img/coins.gif">
   <h1 style="color: white" id="coins"></h1>
-  <span style="color: white" id="name"></span>
+  <h3 style="color: white">Bet : <span id="bet"></span></h3>
+  <h3 style="color: white">Won : <span id="gain"></span></h3>
 </div>
-<div class="col-2 mt-3">
+<div class="mt-3">
   <button class="buttonClass" onclick="gameRules()">Rules</button>
   <button class="buttonClass" onclick="gameRTP()">RTP</button>
 </div>

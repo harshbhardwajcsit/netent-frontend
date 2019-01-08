@@ -5,19 +5,25 @@ var coins;
 
 function loadGame() {
   coins = 10000;
+  gain = 0;
+  bet = 0;
   document.getElementById("coins").innerHTML = coins;
+  document.getElementById("bet").innerHTML = bet;
+  document.getElementById("gain").innerHTML = gain;
 }
 
 function playGame() {
+  playGameAudio();
   document.getElementById("result").innerHTML = "";
   document.getElementsByClassName('spinner')[0].style.visibility = 'visible';
 
 
   if (pre_round_result !== 'FREE_ROUND') {
     coins = coins - 10;
-    document.getElementById("coins").innerHTML = coins
+    document.getElementById("coins").innerHTML = coins;
     bet = bet + 10;
   }
+  document.getElementById("bet").innerHTML = bet;
   pre_round_result = null;
   fetchRandomResult();
 }
@@ -34,9 +40,11 @@ function evaluateGameResult(result) {
     } else {
       document.getElementById("result").innerHTML = "LOST! better luck next time";
     }
+    playLoseMusic();
   } else {
     coins = coins + 20;
     gain = gain + 20;
+    document.getElementById("gain").innerHTML = gain;
     document.getElementById("coins").innerHTML = coins;
     if (result.data.isFreeRound) {
       pre_round_result = 'FREE_ROUND';
@@ -45,6 +53,7 @@ function evaluateGameResult(result) {
     } else {
       document.getElementById("result").innerHTML = "HURRY! you won 20 coins";
     }
+    playWinMusic();
   }
 }
 
@@ -75,3 +84,17 @@ function gameRTP() {
   }
 }
 
+function playGameAudio() {
+  var sound = document.getElementById("audio1");
+  sound.play();
+}
+
+function playWinMusic() {
+  var sound = document.getElementById("audio2");
+  sound.play();
+}
+
+function playLoseMusic() {
+  var sound = document.getElementById("audio3");
+  sound.play();
+}

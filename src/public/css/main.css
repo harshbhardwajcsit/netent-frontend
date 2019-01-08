@@ -1,5 +1,10 @@
 .main {
-background-color: #13244b}
+  background-image: url("../img/king of coins.jpg");
+  background-color: #000000; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  min-height: 1000px;
+}
 
 .treasure-pot {
   position: absolute;
@@ -50,7 +55,8 @@ p {
 h1.treasure-pot {
   padding-left: 10px;
 }
-h1{
+
+h1 {
   color: white;
 }
 
