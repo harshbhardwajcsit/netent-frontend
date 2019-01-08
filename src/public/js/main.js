@@ -37,8 +37,10 @@ function evaluateGameResult(result) {
       pre_round_result = 'FREE_ROUND';
       document.getElementById("result").innerHTML = "LOST but get 1 round free, just triggering....";
       playGame();
+      showResultInAlert("LOST but get 1 round free, just triggering....");
     } else {
       document.getElementById("result").innerHTML = "LOST! better luck next time";
+      showResultInAlert("LOST! better luck next time");
     }
     playLoseMusic();
   } else {
@@ -49,9 +51,11 @@ function evaluateGameResult(result) {
     if (result.data.isFreeRound) {
       pre_round_result = 'FREE_ROUND';
       document.getElementById("result").innerHTML = "BINGO! you won 20 coins and 1 free round, just triggering....";
+      showResultInAlert("BINGO! you won 20 coins and 1 free round, just triggering....");
       playGame();
     } else {
       document.getElementById("result").innerHTML = "HURRY! you won 20 coins";
+      showResultInAlert("HURRY! you won 20 coins");
     }
     playWinMusic();
   }
@@ -97,4 +101,8 @@ function playWinMusic() {
 function playLoseMusic() {
   var sound = document.getElementById("audio3");
   sound.play();
+}
+
+function showResultInAlert(result){
+  alert(result);
 }
